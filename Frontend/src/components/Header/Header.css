@@ -4,17 +4,19 @@
     background: url('/public/header_img.png') no-repeat;
     background-size: contain;
     position: relative;
+    border-radius: 20px;
 }
 
 .header-contents{
     position: absolute;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center; /* Center align items horizontally */
     gap: 1.5vw;
     max-width: 50%;
-    bottom: 10%;
-    left : 6vw;
+    top: 75%; /* Position top at 50% */
+    left: 50%; /* Position left at 50% */
+    transform: translate(-50%, -50%); /* Adjust position to center */
     animation: fadeIn 5s;
     
 }
@@ -61,6 +63,7 @@
     }
 
     .header-contents button{
-        padding: 2vw 4vw;
+        padding: 1vw 3vw;
+        margin-top: 17px;
     }
 }

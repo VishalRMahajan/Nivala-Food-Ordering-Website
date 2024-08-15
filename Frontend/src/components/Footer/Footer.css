@@ -47,6 +47,14 @@
     border: none;
 }
 
+.footer-content-left .logo{
+    width: 200px;
+}
+
+.footer-content-left .footer-desc{
+    text-align: justify;
+}
+
 @media (max-width : 750px){
     .footer-content{
         display: flex;
@@ -58,3 +66,4 @@
         text-align: center;
     }
 }
+

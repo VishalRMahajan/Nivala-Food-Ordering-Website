@@ -10,8 +10,9 @@
 }
 
 .explore-menu-text {
-    max-width: 60%;
+    max-width: 100%;
     columns: #808080;
+    text-align: justify;
 }
 
 .explore-menu-list {
@@ -52,7 +53,7 @@
 }
 
 .explore-menu-list-item .active {
-    border: 4px solid #301a4b;
+    border: 4px solid #e36a22;
     padding: 2px;
     border-radius: 50%;
 }

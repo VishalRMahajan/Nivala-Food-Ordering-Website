@@ -9,11 +9,6 @@ const Footer = () => {
             <div className="footer-content-left">
                 <img src={assets.logo} alt="logo" className='logo' />
                 <p className='footer-desc'>At Nivala, we bring you the comforting flavors of "Ghar Ka Swaad" right to your doorstep. Our mission is to connect you with homemade, nutritious meals that remind you of the warmth and love of home cooking. Discover a variety of dishes from across India, crafted with care by local chefs who share our passion for authentic, homestyle food.</p>
-                <div className="footer-social-icons">
-                    <img src={assets.facebook_icon} alt="" />
-                    <img src={assets.twitter_icon} alt="" />
-                    <img src={assets.linkedin_icon} alt="" />
-                </div>
             </div>
             <div className="footer-content-center">
                 <h2>COMPANY</h2>

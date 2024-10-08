@@ -36,14 +36,14 @@
 }
 
 .navbar button:hover{
-    background: #e36a22;
+    background: #7bae37;
     color: white;
 }
 
 .navbar .active{
-    color: #e36a22;
+    color: #7bae37;
     font-weight: bold;
-    border-bottom : 2px solid #e36a22;
+    border-bottom : 2px solid #7bae37;
 }
 
 .navbar:hover{

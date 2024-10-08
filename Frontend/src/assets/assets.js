@@ -1,7 +1,5 @@
-import basket_icon from './basket_icon.png'
 import logo from './logo.png'
 import header_img from './header_img.png'
-import search_icon from './search_icon.png'
 import Maharashtra from './Maharashtra.png'
 import Gujarat from './Gujarat.png'
 import Tamil_Nadu from './Tamil_Nadu.png'
@@ -19,36 +17,24 @@ import add_icon_green from './add_icon_green.png'
 import remove_icon_red from './remove_icon_red.png'
 import app_store from './app_store.png'
 import play_store from './play_store.png'
-import linkedin_icon from './linkedin_icon.png'
-import facebook_icon from './facebook_icon.png'
-import twitter_icon from './twitter_icon.png'
-import cross_icon from './cross_icon.png'
 import selector_icon from './selector_icon.png'
 import rating_starts from './rating_starts.png'
 import profile_icon from './profile_icon.png'
-import bag_icon from './bag_icon.png'
 import logout_icon from './logout_icon.png'
 import parcel_icon from './parcel_icon.png'
 
 export const assets = {
     logo,
-    basket_icon,
     header_img,
-    search_icon,
     rating_starts,
     add_icon_green,
     add_icon_white,
     remove_icon_red,
     app_store,
     play_store,
-    linkedin_icon,
-    facebook_icon,
-    twitter_icon,
-    cross_icon,
     selector_icon,
     profile_icon,
     logout_icon,
-    bag_icon,
     parcel_icon
 }
 
@@ -169,14 +155,6 @@ export const food_list = [
         _id: "12",
         name: "Gujarati Kadhi",
         image: "https://pipingpotcurry.com/wp-content/uploads/2021/08/Gujarati-Kadhi-Piping-Pot-Curry-2.jpg",
-        price: 12,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Gujarat"
-    },
-    {
-        _id: "13",
-        name: "Thepla",
-        image: "https://arpitasfoodpod.com/wp-content/uploads/2021/11/ABD07939-1F47-4174-9B1D-F9FD34D32981.jpeg",
         price: 12,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Gujarat"

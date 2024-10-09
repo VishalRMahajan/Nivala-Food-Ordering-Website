@@ -3,9 +3,16 @@ import { StoreContext } from "../../context/StoreContext";
 import "./Cart.css";
 import { MdDelete } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import { assets } from "../../assets/assets";
 
 const Cart = () => {
-  const { cartItems, food_list, removeFromCart , getTotalCartAmount } = useContext(StoreContext);
+  const {
+    cartItems,
+    food_list,
+    addToCart,
+    removeFromCart,
+    getTotalCartAmount,
+  } = useContext(StoreContext);
 
   const navigate = useNavigate();
 
@@ -18,7 +25,6 @@ const Cart = () => {
           <p>Price</p>
           <p>Quantity</p>
           <p>Total</p>
-          <p>Remove</p>
         </div>
         <br />
         <hr />
@@ -27,16 +33,23 @@ const Cart = () => {
             return (
               <div key={item._id}>
                 <div className="cart-items-item cart-items-title">
-                  <img src={item.image} />
+                  <img className="food-image" src={item.image} />
                   <p>{item.name}</p>
                   <p>₹ {item.price}</p>
-                  <p>{cartItems[item._id]}</p>
+                  <div className="remove">
+                    <img
+                      src={assets.remove_icon_red}
+                      onClick={() => removeFromCart(item._id)}
+                      alt=""
+                    />
+                    <p>{cartItems[item._id]}</p>
+                    <img
+                      src={assets.add_icon_green}
+                      onClick={() => addToCart(item._id)}
+                      alt=""
+                    />
+                  </div>
                   <p>₹ {item.price * cartItems[item._id]}</p>
-                  <MdDelete
-                    onClick={() => removeFromCart(item._id)}
-                    className="remove"
-                    fontSize="1.5rem"
-                  />
                 </div>
                 <hr />
               </div>
@@ -46,7 +59,14 @@ const Cart = () => {
       </div>
       <div className="cart-bottom">
         <div className="cart-total">
-          <h2>Cart Totals</h2>
+          {getTotalCartAmount() < 100 ? (
+            <div>
+              <h2>Cart Totals</h2>
+              <p style={{"margin-top": "5px"}}>To Procced to Checkout, Add items worth  ₹100 or more</p>
+            </div>
+          ) : (
+            <h2>Cart Totals</h2>
+          )}
           <div>
             <div className="cart-total-details">
               <p>Subtotal</p>
@@ -55,22 +75,37 @@ const Cart = () => {
             <hr />
             <div className="cart-total-details">
               <p>Delivery Fee</p>
-              <p>₹ {getTotalCartAmount()===0?0:25}</p>
+              <p>₹ {getTotalCartAmount() === 0 ? 0 : 25}</p>
             </div>
             <hr />
             <div className="cart-total-details">
               <p>Total</p>
-              <p>₹ {getTotalCartAmount()===0?0:getTotalCartAmount()+25}</p>
+              <p>
+                ₹ {getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 25}
+              </p>
             </div>
             <hr />
           </div>
-          <button onClick={()=>navigate('/placeorder')}>Proceed to Checkout</button>
+          {getTotalCartAmount() < 100 ? (
+            <button
+              onClick={() => navigate("/placeorder")}
+              disabled
+              style={{ backgroundColor: "grey", cursor: "not-allowed" }}
+            >
+              Proceed to Checkout
+            </button>
+          ) : (
+            <button onClick={() => navigate("/placeorder")}>
+              Proceed to Checkout
+            </button>
+          )}
         </div>
         <div className="cart-promocode">
           <div>
             <p>If you have promo code, Enter it here</p>
+
             <div className="cart-promocode-input">
-              <input type="text" placeholder="Enter Promocode here"/>
+              <input type="text" placeholder="Enter Promocode here" />
               <button>Apply</button>
             </div>
           </div>

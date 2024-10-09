@@ -14,7 +14,7 @@
     display: flex;
     list-style: none;
     gap: 20px;
-    color: #49557e;
+    color: black;
     font-size: 18px;
 }
 
@@ -25,19 +25,26 @@
 }
 
 .navbar button{
-    background: transparent;
+    background-color: #7bae37;
     font-size: 16px;
-    color: #49557e;
-    border: 1px solid #301a4b;
+    color: white;
+    border: 1px solid white;
     padding: 10px 30px;
-    border-radius: 50px;
+    border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
 }
 
-.navbar button:hover{
-    background: #7bae37;
-    color: white;
+.navbar .search-icon:hover{
+    color: #7bae37; 
+    transform: scale(1.1);
+    transition: transform 0.3s ease, color 0.3s ease; 
+}
+
+.navbar-cart-icon:hover{
+    color: #7bae37; 
+    transform: scale(1.1);
+    transition: transform 0.3s ease, color 0.3s ease; 
 }
 
 .navbar .active{
@@ -50,11 +57,19 @@
     cursor: pointer;
 }
 
-.navbar-search-icon{
+.navbar-cart-icon{
     position: relative;
 }
 
-.navbar-search-icon .dot{
+.navbar-icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap:40px;
+}
+
+
+.navbar-cart-icon .dot{
     position: absolute;
     min-width: 10px;
     min-height: 10px;
@@ -122,5 +137,8 @@
        display: none;
     }
 
+    .navbar-icons{
+        gap:20px;
+    }
 
 }

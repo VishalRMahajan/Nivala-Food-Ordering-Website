@@ -1,0 +1,43 @@
+.sticky-cart-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.sticky-cart-button button{
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+}
+
+.sticky-cart-button:hover {
+    background-color: #7bae37;
+    color: white;
+}
+
+.sticky-cart-button .dot{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: #7bae37;
+    border-radius: 50%; 
+    top: 9px;
+    right: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; 
+    font-size: 10px; 
+}

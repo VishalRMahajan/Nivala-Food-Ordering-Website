@@ -8,7 +8,7 @@ import { StoreContext } from "../../context/StoreContext";
 
 const Navbar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState("home");
-  const { getTotalCartAmount } = useContext(StoreContext);
+  const { getTotalItemsCount } = useContext(StoreContext);
 
   return (
     <div className="navbar">
@@ -42,13 +42,15 @@ const Navbar = ({ setShowLogin }) => {
 
       <div className="navbar-right">
         <div className="navbar-icons">
-          <FaSearch className="search-icon"  fontSize="1.5em" />
+          <FaSearch className="search-icon" fontSize="1.5em" />
           <div className="navbar-cart-icon">
             <Link to="/cart">
               {" "}
               <FaShoppingCart fontSize="1.5em" />
             </Link>
-            <div className={getTotalCartAmount() === 0 ? "" : "dot"}></div>
+            <div className={getTotalItemsCount() === 0 ? "" : "dot"}>
+              {getTotalItemsCount() === 0 ? "" : getTotalItemsCount()}
+            </div>
           </div>
         </div>
 

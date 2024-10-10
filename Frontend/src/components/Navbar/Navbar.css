@@ -69,15 +69,22 @@
 }
 
 
-.navbar-cart-icon .dot{
+.navbar-cart-icon .dot {
     position: absolute;
-    min-width: 10px;
-    min-height: 10px;
-    background-color: red;
-    border-radius: 5px;
-    top: -8px;
-    right: -8px;
+    width: 16px;
+    height: 16px;
+    background-color: #7bae37;
+    border-radius: 50%; 
+    top: -12px;
+    right: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; 
+    font-size: 10px; 
 }
+
+
 
 @media (max-width:1050px){
     .navbar .logo{

@@ -5,7 +5,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 const Add = () => {
-  const url = "http://localhost:4000";
+  const url = import.meta.env.VITE_BACKEND_URL;
   const [data, setData] = useState({
     name: "",
     description: "",

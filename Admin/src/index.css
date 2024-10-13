@@ -23,10 +23,34 @@ hr {
 
 .app-content {
   display: flex;
+  min-height: 100vh;
+}
+
+.app-side-section{
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  margin: 20px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.flex-col{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 @media (max-width: 900px) {
   body {
-    background-color: white;
+    background-color: #7bae37;
+  }
+
+  .app-side-section{
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 20px;
+    margin-top: 60px;
+    border-radius: 25px;
   }
 }

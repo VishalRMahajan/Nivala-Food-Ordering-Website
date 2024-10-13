@@ -3,6 +3,7 @@ import "./Sidebar.css";
 import { IoIosAddCircle } from "react-icons/io";
 import { FaListAlt, FaShoppingCart } from "react-icons/fa";
 import { assets } from "../../assets/assets";
+import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,38 +17,38 @@ const Sidebar = () => {
       <div className="sidebar">
         <img src={assets.whitelogo} alt="" className="logo" />
         <div className="sidebar-options">
-          <div className="sidebar-option">
+          <NavLink to='/add' className="sidebar-option">
             <IoIosAddCircle className="icon" />
             <p>Add Items</p>
-          </div>
-          <div className="sidebar-option">
+          </NavLink>
+          <NavLink to='/list' className="sidebar-option">
             <FaListAlt className="icon" />
             <p>List Items</p>
-          </div>
-          <div className="sidebar-option">
+          </NavLink>
+          <NavLink to='/order' className="sidebar-option">
             <FaShoppingCart className="icon" />
-            <p>Add Items</p>
-          </div>
+            <p>Display Orders</p>
+          </NavLink>
         </div>
       </div>
       <div className="navbar">
-        <img src={assets.greenlogo} alt="" className="navbar-logo" />
+        <img src={assets.whitelogo} alt="" className="navbar-logo" />
         <button className="toggle-button" onClick={toggleSidebar}>
           ☰
         </button>
         <div className={`navbar-options ${isOpen ? "show" : ""}`}>
-          <div className="navbar-option">
+          <NavLink to='/add' className="navbar-option">
             <IoIosAddCircle className="icon" />
             <p>Add Items</p>
-          </div>
-          <div className="navbar-option">
+          </NavLink>
+          <NavLink  to='/list' className="navbar-option">
             <FaListAlt className="icon" />
             <p>List Items</p>
-          </div>
-          <div className="navbar-option">
+          </NavLink>
+          <NavLink to='/order' className="navbar-option">
             <FaShoppingCart className="icon" />
-            <p>Display Order</p>
-          </div>
+            <p>Display Orders</p>
+          </NavLink>
         </div>
       </div>
     </>

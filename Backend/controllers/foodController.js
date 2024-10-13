@@ -3,17 +3,19 @@ import fs from "fs";
 
 //add food item
 const addFood = async (req, res) => {
-  let image_filename = `${req.file.filename}`;
+  console.log(req.body)
 
   const food = new foodModel({
     name: req.body.name,
     description: req.body.description,
     price: req.body.price,
-    image: image_filename,
+    image: req.body.image,
     category: req.body.category,
     serve: req.body.serve,
     type: req.body.type,
   });
+
+  console.log(food)
   try {
     await food.save();
     res.json({ success: true, message: "Food Item Added Successfully" });
@@ -38,7 +40,6 @@ const listFood = async (req, res) => {
 const removeFood = async (req, res) => {
   try {
     const food = await foodModel.findById(req.body.id);
-    fs.unlink(`uploads/${food.image}`, () => {});
     await foodModel.findByIdAndDelete(req.body.id);
     res.json({ success: true, message: "Food Item Deleted Successfully" });
   } catch (error) {

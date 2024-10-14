@@ -51,13 +51,14 @@
     border-radius: 4px;
     color: white;
     background-color: #7bae37;
+    margin-top: -10px;
 }
 
 .login-popup-condition {
     display: flex;
     align-items: start;
     gap: 8px;
-    margin-top: -15px;
+    margin-top: -10px;
 }
 
 .login-popup-condition input{

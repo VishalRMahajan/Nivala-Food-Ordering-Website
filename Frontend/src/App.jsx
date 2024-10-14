@@ -6,14 +6,16 @@ import Cart from "@/pages/Cart/Cart.jsx";
 import PlaceOrder from "@/pages/PlaceOrder/PlaceOrder.jsx";
 import Footer from "@/components/Footer/Footer.jsx";
 import LoginPopup from "./components/LoginPopup/LoginPopup";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
-  const [showLogin,setShowLogin] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
   return (
     <>
-    {showLogin?<LoginPopup setShowLogin={setShowLogin}/>:<></>}
+      <Toaster position="top-right" reverseOrder={false} />
+      {showLogin ? <LoginPopup setShowLogin={setShowLogin} /> : <></>}
       <div className="app">
-        <Navbar setShowLogin={setShowLogin}/>
+        <Navbar setShowLogin={setShowLogin} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />

@@ -7,6 +7,7 @@ import foodRouter from './routes/foodRoute.js';
 import userRouter from './routes/userRoute.js';
 import 'dotenv/config'
 import cartRouter from './routes/cartRoute.js';
+import orderRouter from './routes/orderRoute.js';
 
 //app config
 const app = express();
@@ -24,12 +25,13 @@ connectDB();
 app.use("/api/food",foodRouter)
 app.use("/api/auth",userRouter)
 app.use("/api/cart",cartRouter)
+app.use("/api/order",orderRouter)
 const __dirname = path.resolve();
 app.use("/images",express.static(path.join(__dirname, 'uploads')))
 
 
 app.get("/",(req,res)=>{
-    res.send("Server is Working")
+    res.status(200).json({message:"Backend Server is Awake"})
 })
 
 

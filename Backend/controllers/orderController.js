@@ -8,7 +8,8 @@ const placeOrder = async (req, res) => {
             userId: req.body.userId,
             items: req.body.items,
             amount: req.body.amount,
-            address: req.body.address
+            address: req.body.address,
+            payment: true,
         });
 
 
@@ -21,4 +22,14 @@ const placeOrder = async (req, res) => {
     }
 };
 
-export { placeOrder };
+const userOrders = async (req, res) => {
+    try {
+        const orders = await orderModel.find({userId:req.body.userId})
+        return res.status(200).json({success:true,data:orders})
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({success:false,message:"An error occurred while fetching orders",error:error.message})
+    }
+}
+
+export { placeOrder, userOrders };

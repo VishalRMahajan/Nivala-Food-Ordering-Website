@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 
 const LoginPopup = ({ setShowLogin }) => {
   const { url } = useContext(StoreContext);
-  const [currState, setCurrState] = useState("Sign Up");
+  const [currState, setCurrState] = useState("Login");
   const [data, setData] = useState({
     name: "",
     email: "",

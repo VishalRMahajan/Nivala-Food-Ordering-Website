@@ -70,7 +70,7 @@ const Navbar = ({ setShowLogin }) => {
           <div className="navbar-profile">
             <CgProfile fontSize="2em" />
             <ul className="nav-profile-dropdown">
-              <li><FaShoppingCart fontSize="1.5em" /><p>Orders</p></li>
+              <li onClick={()=>navigate("/myorders")}><FaShoppingCart fontSize="1.5em" /><p>Orders</p></li>
               <hr/>
               <li onClick={logout}><IoLogOut fontSize="1.5em"/><p>Logout</p></li>
             </ul>

@@ -7,6 +7,7 @@ import PlaceOrder from "@/pages/PlaceOrder/PlaceOrder.jsx";
 import Footer from "@/components/Footer/Footer.jsx";
 import LoginPopup from "./components/LoginPopup/LoginPopup";
 import PaymentGateway from "./components/PaymentGateway/PaymentGateway";
+import MyOrders from "./pages/MyOrders/MyOrders";
 import toast, { Toaster } from "react-hot-toast";
 import { StoreContext } from "./context/StoreContext";
 import axios from "axios";
@@ -48,7 +49,9 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/placeorder" element={<PlaceOrder setshowPaymentGateway={setshowPaymentGateway} setOrderData={setOrderData}/>} />
+          <Route path="/placeorder" element={<PlaceOrder setshowPaymentGateway={setshowPaymentGateway} setOrderData={setOrderData} setShowLogin={setShowLogin}/>} />
+          <Route path='/myorders' element={<MyOrders />} />
+
         </Routes>
       </div>
       <Footer />

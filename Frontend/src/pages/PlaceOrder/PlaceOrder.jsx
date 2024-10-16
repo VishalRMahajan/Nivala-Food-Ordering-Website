@@ -1,13 +1,15 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./PlaceOrder.css";
 import { StoreContext } from "../../context/StoreContext";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
-const PlaceOrder = ({setshowPaymentGateway,setOrderData}) => {
+const PlaceOrder = ({setshowPaymentGateway,setOrderData,setShowLogin}) => {
   const { getTotalCartAmount, cartItems, token, food_list, url } =
     useContext(StoreContext);
 
+  const navigate = useNavigate();
 
   const [orderDetails, setOrderDetails] = useState({
     firstName: "",
@@ -62,6 +64,19 @@ const PlaceOrder = ({setshowPaymentGateway,setOrderData}) => {
     }
       */
   };
+
+  useEffect(()=>{
+    if(!token){
+      navigate("/cart");
+      toast("Please Login to Place Order",{icon:"🔒"})
+      setShowLogin(true)
+    }
+    else if(getTotalCartAmount() === 0){
+      navigate("/cart")
+      toast("Please Add Items to Cart",{icon:"🛒"})
+    }
+
+  },[])
 
   return (
       <form action="" className="place-order" onSubmit={handlePlaceOrder}>

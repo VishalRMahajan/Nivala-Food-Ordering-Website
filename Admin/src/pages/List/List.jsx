@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./List.css";
 import axios from "axios";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 
-const List = () => {
-  const url = import.meta.env.VITE_BACKEND_URL;
+const List = ({url}) => {
+  
   console.log(url)
   const [list, setList] = useState([]);
 

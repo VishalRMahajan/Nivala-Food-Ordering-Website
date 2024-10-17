@@ -16,7 +16,7 @@ const MyOrders = () => {
     setData(response.data.data);
     console.log(response.data.data)
   };
-
+  
   useEffect(() => {
     if (token) {
       fetchOrders();
@@ -41,7 +41,7 @@ const MyOrders = () => {
             <p>₹ {order.amount}</p>
             <p>Items: {order.items.length}</p>
             <p>Status: <b>{order.status}</b></p>
-            <button>Track Order</button>
+            <button onClick={fetchOrders()}>Check Order Status</button>
           </div>
 
         ))}

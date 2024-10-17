@@ -32,4 +32,25 @@ const userOrders = async (req, res) => {
     }
 }
 
-export { placeOrder, userOrders };
+
+const listOrders = async (req,res)=>{
+    try {
+        const orders = await orderModel.find({});
+        return res.status(200).json({success:true,data:orders})
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({success:false,message:"An error occurred while listing orders",error:error.message})
+    }
+}
+
+const updateStatus = async(req,res)=>{
+    try {
+        await orderModel.findByIdAndUpdate(req.body.orderId,{status:req.body.status});
+        return res.status(200).json({success:true,message:"Status Updated"})
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({success:false,message:"An error occurred while Updating Status",error:error.message})
+    }
+}
+
+export { placeOrder, userOrders,listOrders,updateStatus };

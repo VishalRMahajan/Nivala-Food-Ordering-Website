@@ -4,8 +4,8 @@ import { assets } from "../../assets/assets";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-const Add = () => {
-  const url = import.meta.env.VITE_BACKEND_URL;
+const Add = ({url}) => {
+  
   const [data, setData] = useState({
     name: "",
     description: "",

@@ -9,6 +9,9 @@ const StoreContextProvider = (props) => {
   const [token, setToken] = useState("");
   const [food_list, setFoodList] = useState([]);
   const [name, setname] = useState("");
+  const [promoCode, setPromoCode] = useState("");
+  const [discount, setDiscount] = useState(0);
+  const [discountApplied, setDiscountApplied] = useState(false)
 
   useEffect(() => {
     async function loadData() {
@@ -92,6 +95,12 @@ const StoreContextProvider = (props) => {
     url,
     token,
     setToken,
+    promoCode,
+    setPromoCode,
+    discount,
+    setDiscount,
+    discountApplied,
+    setDiscountApplied,
   };
 
   return (

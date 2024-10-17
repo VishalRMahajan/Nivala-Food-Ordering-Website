@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { StoreContext } from "../../context/StoreContext";
 import "./Cart.css";
 import { useNavigate } from "react-router-dom";
@@ -14,21 +14,29 @@ const Cart = () => {
     removeFromCart,
     getTotalCartAmount,
     url,
+    promoCode,
+    setPromoCode,
+    discount,
+    setDiscount,
+    discountApplied,
+    setDiscountApplied,
   } = useContext(StoreContext);
 
-  const [promoCode, setPromoCode] = useState("");
-  const [discount, setDiscount] = useState(0);
   const navigate = useNavigate();
 
   const handleApplyPromoCode = async () => {
     try {
-      const response = await axios.post(`${url}/api/promo/check`, { promoCode });
+      const response = await axios.post(`${url}/api/promo/check`, {
+        promoCode,
+      });
       const promo = response.data;
       console.log(promo);
       if (promo.success) {
         if (promo.data.discountType === "percentage") {
+          setDiscountApplied(true);
           setDiscount((getTotalCartAmount() * promo.data.discount) / 100);
         } else if (promo.data.discountType === "amount") {
+          setDiscountApplied(true);
           setDiscount(promo.data.discount);
         }
         toast.success("Promo Code Applied Successfully");
@@ -109,7 +117,10 @@ const Cart = () => {
             <div className="cart-total-details">
               <p>Total</p>
               <p>
-                ₹ {getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 25 - discount}
+                ₹{" "}
+                {getTotalCartAmount() === 0
+                  ? 0
+                  : getTotalCartAmount() + 25 - discount}
               </p>
             </div>
             <hr />

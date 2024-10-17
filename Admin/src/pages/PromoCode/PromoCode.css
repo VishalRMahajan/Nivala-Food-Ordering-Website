@@ -1,0 +1,106 @@
+.promo {
+    margin: 50px 0;
+}
+
+.promo h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.promo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.promo-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid #7bae37;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.promo-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.promo-update-button {
+    padding: 10px;
+    background-color: #7bae37;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.promo-update-button:hover {
+    background-color: #6a9b2e;
+}
+
+.promo-add-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #7bae37;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.promo-add-button:hover {
+    background-color: #6a9b2e;
+}
+
+@media (max-width: 1200px) {
+    .promo-item {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 900px) {
+    .promo-item {
+        grid-template-columns: 1fr;
+        row-gap: 10px;
+    }
+
+    .promo-item div {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .promo-item {
+        grid-template-columns: 1fr;
+        row-gap: 10px;
+    }
+
+    .promo-item div {
+        grid-column: span 1;
+    }
+
+    .promo-item-code,
+    .promo-item-discount,
+    .promo-item-expiry,
+    .promo-item-status,
+    .promo-item-type {
+        font-size: 14px;
+    }
+
+    .promo-update-button {
+        font-size: 14px;
+    }
+}

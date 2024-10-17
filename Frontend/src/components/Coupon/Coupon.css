@@ -1,0 +1,42 @@
+.Coupon {
+    text-align: left;
+    padding: 20px;
+}
+
+.Coupon h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.Coupon-description {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #555;
+}
+
+.Coupon-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.Coupon-grid img {
+    width: calc(33.33% - 20px);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 900px) {
+    .Coupon-grid img {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 600px) {
+    .Coupon-grid img {
+        width: 100%;
+    }
+}

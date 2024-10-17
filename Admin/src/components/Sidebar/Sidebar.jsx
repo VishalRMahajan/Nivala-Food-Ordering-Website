@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Sidebar.css";
 import { IoIosAddCircle } from "react-icons/io";
-import { FaListAlt, FaShoppingCart } from "react-icons/fa";
+import { FaListAlt, FaShoppingCart,FaRegMoneyBillAlt  } from "react-icons/fa";
 import { assets } from "../../assets/assets";
 import { NavLink } from "react-router-dom";
 
@@ -28,6 +28,10 @@ const Sidebar = () => {
           <NavLink to='/order' className="sidebar-option">
             <FaShoppingCart className="icon" />
             <p>Display Orders</p>
+          </NavLink>
+          <NavLink to='/promo' className="sidebar-option">
+            <FaRegMoneyBillAlt  className="icon" />
+            <p>Promo Code</p>
           </NavLink>
         </div>
       </div>

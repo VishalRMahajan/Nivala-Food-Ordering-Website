@@ -75,18 +75,34 @@
     cursor: pointer;
 }
 
+.cart-total button:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+}
+
 .cart-promocode {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cart-promocode-title {
+    font-size: max(1vw, 13px);
+    font-weight: bold;
 }
 
 .cart-promocode-input {
-    margin-top: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #eaeaea;
     border-radius: 4px;
+    padding: 5px 5px;
+    width: 100%;
+    margin-top: 10px;
 }
+
 
 .cart-promocode-input input {
     border: none;
@@ -94,6 +110,7 @@
     outline: none;
     padding-left: 10px;
     flex: 1;
+    font-size: max(1vw, 13px);
 }
 
 .cart-promocode-input button {
@@ -106,6 +123,10 @@
     width: max(10vw, 150px);
 }
 
+.cart-promocode-input button:hover {
+    background-color: #6a9b2e;
+}
+
 @media (max-width: 750px) {
     .cart-bottom {
         flex-direction: column-reverse;
@@ -115,7 +136,7 @@
         justify-content: start;
     }
 
-    .cart .food-image{
+    .cart .food-image {
         width: 30px;
     }
 

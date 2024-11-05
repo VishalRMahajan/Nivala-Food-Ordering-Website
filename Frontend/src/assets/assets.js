@@ -22,6 +22,8 @@ import parcel_icon from "./parcel_icon.png";
 import VegIcon from "./VegIcon.png";
 import NonVegIcon from "./NonVegIcon.png";
 import Coupon1 from "./coupon.png"
+import Coupon2 from "./coupon2.png"
+import Coupon3 from "./coupon3.png"
 
 export const assets = {
   logo,
@@ -39,6 +41,8 @@ export const assets = {
   VegIcon,
   NonVegIcon,
   Coupon1,
+  Coupon2,
+  Coupon3
 };
 
 export const menu_list = [

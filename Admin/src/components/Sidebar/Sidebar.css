@@ -45,7 +45,7 @@
     padding: 8px;
 }
 
-.sidebar-option.active{
+.sidebar-option.active {
     background-color: rgba(255, 255, 255, 0.9);
     color: #7bae37;
     border-top-right-radius: 50px;
@@ -53,6 +53,22 @@
     transition: background-color 1s ease 0s;
 }
 
+.logout-button {
+    padding: 10px;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #7bae37;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin: 20px 10px;
+    width: calc(100% - 20px); 
+}
+
+.logout-button:hover {
+    background-color: #5c8a28;
+}
 
 .navbar {
     display: none;
@@ -134,4 +150,20 @@
         padding: 8px;
     }
 
+    .logout-button {
+        padding: 10px;
+        background-color: white;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        color: #7bae37;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+        margin: 20px 10px;
+        width: calc(100% - 20px);
+    }
+
+    .logout-button:hover {
+        background-color: #5c8a28;
+    }
 }

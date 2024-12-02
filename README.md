@@ -2,6 +2,11 @@
   <img src="https://github.com/user-attachments/assets/5835cdbc-29c6-41ae-9d9a-2d143f20c9c2" alt="Food Ordering Website Logo">
 </p>
 
+
+
+https://github.com/user-attachments/assets/b833b686-a4fb-4abb-8b16-9862bce135e4
+
+
 # About The Project
 
 **Nivala** is a MERN stack food ordering platform that connects customers with the comfort of home-cooked meals. Easily explore a wide selection of homemade food options and get them delivered to your door. **Nivala** emphasizes traditional, authentic meals, offering simplicity and convenience.

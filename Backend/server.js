@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: ["https://nivala.vishalrmahajan.in", "http://localhost:5173"],
+    origin: "https://nivala.vishalrmahajan.in",
     credentials: true,
   })
 );

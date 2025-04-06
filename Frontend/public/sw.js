@@ -1,5 +1,10 @@
 const CACHE_NAME = "nivala-cache-v1";
-const urlsToCache = ["/", "/index.html"];
+const urlsToCache = [
+  "/",
+  "../index.html",
+  "../src/main.jsx",
+  "../src/index.css",
+];
 
 // Cache on install
 self.addEventListener("install", (event) => {

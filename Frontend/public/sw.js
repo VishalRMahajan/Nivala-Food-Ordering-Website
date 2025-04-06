@@ -8,5 +8,8 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
+  if (event.request.url.includes("/api/cart/")) {
+    return;
+  }
   console.log("Fetch intercepted for:", event.request.url);
 });

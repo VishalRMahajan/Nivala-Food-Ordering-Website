@@ -17,7 +17,12 @@ const port = 4000;
 //middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors({ origin: "https://nivala.vishalrmahajan.in" }));
+app.use(
+  cors({
+    origin: ["https://nivala.vishalrmahajan.in", "http://localhost:5173"],
+    credentials: true,
+  })
+);
 
 //DB config
 connectDB();
@@ -39,5 +44,3 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
-
-//

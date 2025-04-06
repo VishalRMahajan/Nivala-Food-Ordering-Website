@@ -11,7 +11,7 @@ const StoreContextProvider = (props) => {
   const [name, setname] = useState("");
   const [promoCode, setPromoCode] = useState("");
   const [discount, setDiscount] = useState(0);
-  const [discountApplied, setDiscountApplied] = useState(false)
+  const [discountApplied, setDiscountApplied] = useState(false);
 
   useEffect(() => {
     async function loadData() {
@@ -68,11 +68,17 @@ const StoreContextProvider = (props) => {
   };
 
   const loadCartData = async (token) => {
-    const response = await axios.post(`${url}/api/cart/get`,{}, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
-    setCartItems(response.data.cartData)
-  }
+    if (token) {
+      const response = await axios.post(
+        `${url}/api/cart/get`,
+        {},
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+      setCartItems(response.data.cartData);
+    }
+  };
 
   const getTotalItemsCount = () => {
     let totalItems = 0;
